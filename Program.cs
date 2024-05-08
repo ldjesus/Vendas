@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Vendas.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,9 +10,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DbVendasContexto>(options =>{
+builder.Services.AddDbContext<DbVendasContexto>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-})
+});
 
 var app = builder.Build();
 

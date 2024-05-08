@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Vendas.Models;
 
-namespace VENDAS.Data
+namespace Vendas.Data
 {
     public class DbVendasContexto : DbContext
     {
